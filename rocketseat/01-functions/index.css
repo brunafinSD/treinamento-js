@@ -1,0 +1,16 @@
+body{
+    background-color: #000000;
+}
+
+.container{
+    background-color: #000000;
+}
+
+.container p{
+    color: #ffffff;
+}
+
+.container ul li{
+    color: #ffffff;
+    font-weight: 200;
+}

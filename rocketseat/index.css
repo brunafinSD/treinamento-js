@@ -1,0 +1,30 @@
+body{
+    background-color: #000000;
+}
+
+.container{
+    background-color: #000000;
+}
+
+.container p{
+    color: #ffffff;
+    font-weight: 200;
+    text-align: center;
+}
+
+.container h2, h1{
+    color: #ffffff;
+    margin: 20px;
+    text-align: center;
+}
+
+.container ul li a {
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container ul li a:hover{
+    background-color: #9466ff;
+    text-decoration: none;
+}

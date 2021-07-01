@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>switch..case simples exemplo</title>
+    <link href="../../../styles/reset.css" type="text/css" rel="stylesheet">
+    <link href="../../../styles/config.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <label for="weather">Selecione o tipo de clima hoje: </label>
+    <select id="weather">
+      <option value="">--Faça uma escolha--</option>
+      <option value="sunny">Ensolarado</option>
+      <option value="rainy">Chuvosa</option>
+      <option value="snowing">Nevando</option>
+      <option value="overcast">Nublado</option>
+    </select>
+
+    <p></p>
+
+    <script>
+      const select = document.querySelector('select');
+      const para = document.querySelector('p');
+      let temperature = 29;
+
+      select.onchange = setWeather;
+
+      function setWeather() {
+        const choice = select.value;
+
+        switch(choice) {
+          case 'sunny':
+            para.textContent = 'Hoje está bom e ensolarado lá fora. Faz ' + temperature + 'graus. Use shorts! Vá à praia ou ao parque e tome um sorvete.';
+            break;
+          case 'rainy':
+            para.textContent = 'A chuva está caindo lá fora; leve uma capa de chuva e um guarda-chuva, e não fique fora por muito tempo.';
+            break;
+          case 'snowing':
+            para.textContent = 'A neve está caindo - está congelando! Melhor ficar em casa com uma xícara de chocolate quente ou construir um boneco de neve.';
+            break;
+          case 'overcast':
+            para.textContent = 'Não está chovendo, mas o céu está cinza e sombrio; pode girar a qualquer minuto, então leve uma capa de chuva para o caso.';
+            break;
+          default:
+            para.textContent = '';
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Busca contatos - split</title>
+    <link href="../../../styles/reset.css" type="text/css" rel="stylesheet">
+    <link href="../../../styles/config.css" type="text/css" rel="stylesheet">
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+  <label for="search">Buscar contato pelo nome: </label>
+  <input id="search" type="text">
+  <button>Buscar</button>
+
+  <p></p>
+
+
+    <script>
+    const contacts = ['Bruna:993731006', 'Elia:999365380', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+    const para = document.querySelector('p');
+    const input = document.querySelector('input');
+    const btn = document.querySelector('button');
+
+    btn.addEventListener('click', function() {
+      const searchName = input.value.toLowerCase();
+      input.value = '';
+      input.focus();
+      for(let i = 0; i < contacts.length; i++) {
+        let splitContact = contacts[i].split(':');
+        if(splitContact[0].toLowerCase() === searchName) {
+          para.textContent = splitContact[0] + ', contato: ' + splitContact[1] + '.';
+          break;
+        } else if(i === contacts.length - 1) {
+          para.textContent = 'Contato não encontrado.';
+        }
+      }
+    });
+      
+    </script>
+
+  </body>
+</html>
